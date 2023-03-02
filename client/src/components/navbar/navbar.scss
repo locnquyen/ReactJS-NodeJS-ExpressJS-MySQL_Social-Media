@@ -1,0 +1,144 @@
+@import "../../style.scss";
+
+.navbar {
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    height: 40px;
+    border-bottom: 1px solid themed("border");
+    position: sticky;
+    top: 0;
+    background-color: themed("bg");
+    color: themed("textColor");
+    z-index: 999;
+
+    .left {
+      flex: 3;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      span {
+        font-weight: bold;
+        font-size: 20px;
+        color: themed("logo");
+      }
+    }
+
+    .search {
+      flex: 6;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid themed("border");
+      border-radius: 20px;
+      padding: 1px;
+      background-color: themed("bgSoft");
+      margin: 0 20px;
+
+      @include tablet {
+        width: 200px;
+      }
+
+      .search-icon {
+        margin-left: 20px;
+      }
+
+      @include mobile {
+        display: none;
+      }
+
+      input {
+        border: none;
+        width: 500px;
+        background-color: transparent;
+        color: themed("textColor");
+        padding: 10px 0;
+
+      }
+
+      input:focus-visible {
+        outline-offset: 0px;
+        outline: none;
+      }
+    }
+
+    .right {
+      flex: 3;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+
+      @include mobile {
+        display: none;
+      }
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 500;
+        cursor: pointer;
+        position: relative;
+
+        @include tablet {
+          display: none;
+        }
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        span {
+        }
+
+        .profile-menu {
+          width: 300px;
+          height: 400px;
+          position: absolute;
+          top: 40px;
+          right: 0;
+          background-color: themed("bgSoft");
+          border-radius: 10px;
+
+          .menu-item {
+            display:flex;
+            align-items: center;
+            justify-content:left;
+            padding: 5px 10px;
+            margin: 4px;
+            gap: 20px;
+
+            &__icon{
+              background-color: themed("bgIcon");
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center
+            }
+
+            button {
+              border: none;
+              background-color: transparent;
+              cursor: pointer;
+              color: themed("textColor");
+              font-weight: 400;
+              font-size: 16px;
+            }
+          }
+          .menu-item:hover{
+            background-color: #6c757d;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}

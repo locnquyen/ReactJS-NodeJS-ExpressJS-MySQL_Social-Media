@@ -1,0 +1,53 @@
+@import "../../style.scss";
+.wrapperMessage {
+    @include themify($themes) {
+        .message {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+
+            &.own {
+                align-items: flex-end;
+
+            }
+
+            .messageInfo {
+                display: flex;
+
+                .messageImg {
+                    img {
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        margin-right: 10px;
+                    }
+                }
+
+                .message__time {
+                    .messageText {
+                        padding: 10px;
+                        border-radius: 20px;
+                        background-color: #1877f2;
+                        color: white;
+                        max-width: 300px;
+                    }
+
+                    .ownMessageText {
+                        background-color: themed("bgSoft");
+                        color: themed("textColor");
+                        padding: 10px 12px;
+                        border-radius: 20px;
+                        max-width: 300px;
+
+                    }
+                }
+            }
+
+            .mDateTime {
+                font-size: 8px;
+                margin: 4px;
+            }
+        }
+    }
+}

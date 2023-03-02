@@ -1,0 +1,77 @@
+@import "../../style.scss";
+
+.chatBoxWrapper {
+    @include themify($themes) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        padding: 10px;
+        height: 97%;
+
+        .chatBoxTop {
+            height: 100%;
+            overflow: auto;
+            padding-right: 10px;
+            span {
+                color: themed("textColor");
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: themed("border");
+                border-radius: 8px;
+                padding: 4px;
+            }
+
+            &::-webkit-scrollbar {
+                width: 8px;
+                background-color: themed("bgSoft");
+                border-radius: 8px;
+            }
+        }
+
+        .chatBoxBottom {
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: themed("bgSoft");
+            border-radius: 12px;
+
+            .chatMessageInput {
+                width: 85%;
+                padding: 10px;
+                background-color: themed("bgSoft");
+                border: none;
+                color: themed("textColor");
+                border-radius: 12px;
+                height: auto;
+                height: 60px;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                textarea {
+                    overflow: hidden;
+                }
+            }
+
+            textarea:focus-visible {
+                outline-offset: 0px;
+                outline: none;
+            }
+
+            .chatSubmitButton {
+                width: 70px;
+                height: 40px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                background-color: teal;
+                color: themed("textColor");
+                margin-right: 12px;
+            }
+        }
+    }
+}

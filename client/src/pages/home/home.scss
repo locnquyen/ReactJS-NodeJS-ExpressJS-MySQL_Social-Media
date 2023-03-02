@@ -1,0 +1,17 @@
+@import "../../style.scss";
+
+.home{
+  @include themify($themes) {
+    padding: 20px 20px;
+    background-color: themed("bg");
+    min-height: 100vh;
+
+    @include mobile {
+      padding: 10px;
+    }
+
+    @include tablet{
+      padding: 20px;
+    }
+  }
+ }

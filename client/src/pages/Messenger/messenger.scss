@@ -1,0 +1,54 @@
+@import "../../style.scss";
+
+.messenger {
+    @include themify($themes) {
+        height: calc(100vh - 60px);
+        display: flex;
+        background-color: themed("bg");
+        color: themed("textColor");
+
+        .chatMenu {
+            flex: 3;
+
+            .chatMenuWrapper {
+                padding: 10px;
+                height: 90%;
+                .chatMenuInput {
+                    padding: 10px;
+                    margin-bottom: 20px;
+                    border-bottom: 1px solid gray;
+
+                    input {
+                        width: 90%;
+                        padding: 10px 0;
+                        border: none;
+                        background-color: themed("bg");
+                        color: themed("textColor");
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+
+        .chatBox {
+            flex: 6;
+
+            .noConversationText{
+                padding: 20px;
+            }
+
+        }
+
+        .chatOnline {
+            flex: 3;
+
+            .chatOnlineWrapper {
+                padding: 10px;
+                height: 90%;
+            }
+
+            .chatOnlineWrapper {
+            }
+        }
+    }
+}
