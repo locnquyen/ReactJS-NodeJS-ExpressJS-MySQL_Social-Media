@@ -51,8 +51,8 @@ const Profile = () => {
   // Mutations
   const queryClient = useQueryClient();
   const mutation = useMutation({
-    mutationFn: folowing => {
-      if (folowing) {
+    mutationFn: following => {
+      if (following) {
         return apiConfig.delete("/v1/relationships?userId=" + userId)
 
       }

@@ -9,10 +9,10 @@
     overflow: scroll;
     background-color: themed("bgSoft");
 
-    @include mobile{
+    @include mobile {
       display: none;
     }
-    @include tablet{
+    @include tablet {
       display: none;
     }
 
@@ -23,7 +23,7 @@
     .container {
       padding: 20px;
 
-      .item {
+      .suggestItem {
         -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
         -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
         box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
@@ -79,16 +79,79 @@
             display: flex;
             align-items: center;
             gap: 10px;
-
+            
             button {
               border: none;
-              padding: 5px;
+              padding: 5px 10px;
               color: themed("textColor");
               cursor: pointer;
+              border: none;
+              background-color: themed("bg");
+              border-radius:12px;
+            }
+             button:hover {
+              background-color: themed("bgSoft");
+             }
+          }
+        }
+      }
 
-              
+      .yourFriends {
+        -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: themed("bg");
+        border-radius: 20px;
+        cursor: pointer;
+
+
+        span {
+          color: gray;
+        }
+
+        .friend {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 4px 0px;
+          padding: 6px;
+
+
+          .friendInfo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+
+            .online {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background-color: limegreen;
+              position: absolute;
+              top: 0;
+              left: 30px;
+            }
+
+            span {
+              font-weight: 500;
+              color: themed("textColor");
             }
           }
+        }
+
+        .friend:hover{
+          background-color: themed("bgSoft");
+          border-radius: 8px;
         }
       }
     }

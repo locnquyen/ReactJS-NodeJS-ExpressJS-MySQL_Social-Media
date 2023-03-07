@@ -53,3 +53,35 @@ export const updateUser = (req, res) => {
 
     });
 }
+
+export const getFriendUsers = (req, res) => {
+    const userId = req.query.userId;
+
+    const token = req.cookies.accessToken;
+    if (!token) {
+        return res.status(401).json("Not logged in!!")
+    }
+
+    jwt.verify(token, "secretkey", (err, userInfo) => {
+        console.log("userInfo",userInfo)
+        if (err) {
+            return res.status(400).json("Wrong password or username!")
+        }
+
+        const q = 
+            `SELECT u.id, users.id as userId, users.name, users.profilePicture
+            FROM users AS u JOIN relationships AS r ON (u.id = r.followerUserId)
+            JOIN users ON (users.id = r.followedUserId)
+            WHERE r.followerUserId = ?`
+            
+
+        const values =  [userId]
+
+        db.query(q, values, (err, data) => {
+            if (err) {
+                res.status(500).json(err);
+            }
+            return res.status(200).json(data);
+        })
+    });
+}
