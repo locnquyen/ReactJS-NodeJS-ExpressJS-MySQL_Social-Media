@@ -26,7 +26,8 @@ const RightBar = () => {
     <div className="rightBar">
       <div className="container">
         <div className="yourFriends">
-          <span>Your follow</span>
+          <span className="menuFriend">Your follow</span>
+          <hr />
           {fIsLoading ? "Loading..." : friends.map(friend => {
             return (
               <Link to={'/profile/' + friend.userId} style={{ textDecoration: "none" }} key={friend.userId}>
@@ -37,7 +38,7 @@ const RightBar = () => {
                       alt=""
                     />
                     <div className="online" />
-                    <span>{friend.name}</span>
+                    <span className="friendName">{friend.name}</span>
                   </div>
                 </div>
               </Link>

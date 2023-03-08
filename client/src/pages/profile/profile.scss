@@ -2,127 +2,175 @@
 
 .profile {
   @include themify($themes) {
-    background-color: themed("bgSoft");
+    background-color: themed("bg");
 
-    .images {
-      width: 100%;
-      height: 300px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .wrapperPicture {
+      background-color: themed("bgSoft");
+      height: 700px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid themed("bg");
+      .images {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-      .cover{
-        width: 90%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 5p;
+        .coverPicture {
+          width: 90%;
+          height: 460px;
+
+          .cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+          }
+        }
+        .profilePicture {
+          .profile {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            left: 120px;
+            top: 420px;
+            margin: auto;
+            padding: 4px;
+          }
+        }
       }
 
-      .profilePic{
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        object-fit: cover;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: auto;
-        top: 200px;
-      }
-    }
-    .profileContainer {
-      padding: 20px 70px;
-
-      @include mobile{
-        padding: 10px;
-      }
-
-      @include tablet{
-        padding: 20px;
-      }
-
-      .uInfo {
-        height: 180px;
-        -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
-        -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
-        box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
-        border-radius: 20px;
-        background-color: themed("bg");
+      .wrapperInfo {
+        margin: 0 80px 0 360px;
         color: themed("textColor");
-        padding: 50px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 20px;
-
-        @include mobile{
-          flex-direction: column;
-          height: 30vh;
-          padding: 20px;
-          margin-top: 100px;
-        }
 
         .left {
-          flex: 1;
-          display: flex;
-          gap: 10px;
+          margin-top: 20px;
 
-          @include tablet{
-            flex-wrap: wrap;
-          }
-
-          a{
-            color: themed("textColorSoft");
-          }
-        }
-
-        .center {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
-
-          span {
-            font-size: 30px;
-            font-weight: 500;
+          .nameUser {
+            font-size: 32px;
+            font-weight: 700;
           }
 
           .info {
-            width: 100%;
+            margin-top: 12px;
             display: flex;
-            align-items: center;
-            justify-content: space-around;
+            gap: 8px;
+            text-align: center;
+            flex-direction: column;
+            font-size: 12px;
 
             .item {
               display: flex;
+              gap: 12px;
               align-items: center;
-              gap: 5px;
-              color: themed("textColorSoft");
-
-              span {
-                font-size: 12px;
-              }
+              text-align: center;
             }
-          }
-          button {
-            border: none;
-            background-color: #5271ff;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
           }
         }
 
         .right {
-          flex: 1;
           display: flex;
+          text-align: center;
           align-items: center;
-          justify-content: flex-end;
-          gap: 10px;
+
+          .updateProfile {
+            background-color: themed("bgSoft");
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid;
+            color: themed("textColor");
+            cursor: pointer;
+          }
+
+          .updateProfile:hover{
+            cursor: pointer;
+            opacity: .6;
+          }
+
+          .friendProfile {
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            gap: 20px;
+
+            .followFriend {
+              background-color: themed("bgSoft");
+              border-radius: 4px;
+              border: 1px solid;
+              cursor: pointer;
+
+              .btnFollow {
+                font-size: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                padding: 8px 12px;
+
+                button {
+                  cursor: pointer;
+                  background-color: themed("bgSoft");
+                  border: none;
+                  color: themed("textColor");
+                }
+              }
+
+              .btnFollow:hover {
+                opacity: 0.5;
+                cursor: pointer;
+              }
+            }
+
+            .sendMessage {
+              background-color: #2374e1;
+              border: 1px solid #2374e1;
+              border-radius: 4px;
+              color: #fff;
+
+              .btnMessage {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+                padding: 8px 12px;
+                font-size: 20px;
+                cursor: pointer;
+              }
+
+              .btnMessage:hover {
+                opacity: 0.5;
+                cursor: pointer;
+              }
+
+              button {
+                background-color: #2374e1;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+              }
+            }
+          }
         }
+      }
+    }
+    .infoContainer{
+      display: flex;
+      justify-content: space-between;
+      margin: 12px 60px;
+
+      .leftInfo{
+        flex: 5;
+      }
+
+      .rightInfo{
+        flex: 7;
+        margin: 0 20px;
       }
     }
   }

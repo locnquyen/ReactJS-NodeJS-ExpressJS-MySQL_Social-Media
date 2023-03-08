@@ -14,6 +14,8 @@ import Courses from "../../assets/12.png";
 import Fund from "../../assets/13.png";
 import { AuthContext } from "../../context/authContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AiFillHome } from "react-icons/ai";
 
 
 const LeftBar = () => {
@@ -24,33 +26,25 @@ const LeftBar = () => {
     <div className="leftBar">
       <div className="container">
         <div className="menu">
-          <div className="user">
-            <img
-              src={ currentUser.profilePicture ? "/upload/" +currentUser.profilePicture : "/upload/user.png"}
-              alt=""
-            />
-            <span>{currentUser.name}</span>
+          <div className="item">
+            <AiFillHome className="homeIcon" />
+            <span>Home</span>
           </div>
+          <Link to={"/profile/" + currentUser.id} style={{ textDecoration: "none" }}>
+            <div className="user">
+              <img
+                src={currentUser.profilePicture ? "/upload/" + currentUser.profilePicture : "/upload/user.png"}
+                alt=""
+              />
+              <span>{currentUser.name}</span>
+            </div>
+          </Link>
+
           <div className="item">
             <img src={Friends} alt="" />
             <span>Friends</span>
           </div>
-          <div className="item">
-            <img src={Groups} alt="" />
-            <span>Groups</span>
-          </div>
-          <div className="item">
-            <img src={Market} alt="" />
-            <span>Marketplace</span>
-          </div>
-          <div className="item">
-            <img src={Watch} alt="" />
-            <span>Watch</span>
-          </div>
-          <div className="item">
-            <img src={Memories} alt="" />
-            <span>Memories</span>
-          </div>
+
         </div>
         <hr />
         <div className="menu">

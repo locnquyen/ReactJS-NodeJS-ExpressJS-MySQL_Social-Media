@@ -1,22 +1,16 @@
 import "./navbar.scss";
 
-import { AiOutlineHome } from "react-icons/ai";
-
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
-import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
-import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
-import Message from "@mui/icons-material/Message";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Logout from "@mui/icons-material/Logout";
 
-import { RiMessengerLine } from "react-icons/ri";
-import { MdOutlineWbSunny, MdOutlineDarkMode, MdOutlineNotificationsNone } from "react-icons/md";
+import { BsMessenger } from "react-icons/bs";
+
+import { IoNotifications } from "react-icons/io5";
+import { MdSunny, MdDarkMode,  } from "react-icons/md";
 
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
+
 import { DarkModeContext } from "../../context/darkModeContext";
 import { AuthContext } from "../../context/authContext";
 import axios from "axios";
@@ -56,18 +50,18 @@ const Navbar = () => {
         <div className="icons">
           <div className="darkMode icon">
             {darkMode ? (
-              <MdOutlineWbSunny onClick={toggle} />
+              <MdSunny onClick={toggle} />
             ) : (
-              <MdOutlineDarkMode onClick={toggle} />
+              <MdDarkMode onClick={toggle} />
             )}
           </div>
           <div className=" icon">
             <Link to={'/messenger/' + currentUser.id} style={{}}>
-              <RiMessengerLine className="messengerIcon"/>
+              <BsMessenger className="messengerIcon"/>
             </Link>
           </div>
           <div className="nonIcon icon">
-            <MdOutlineNotificationsNone />
+            <IoNotifications />
           </div>
         </div>
         <div className="user" onClick={() => setMenuProfile(!menuProfile)}>

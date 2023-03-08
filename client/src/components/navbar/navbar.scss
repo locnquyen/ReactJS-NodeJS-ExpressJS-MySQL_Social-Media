@@ -78,14 +78,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 20px;
-        font-size: 24px;
+        gap: 16px;
+        font-size: 20px;
         margin-right: 8px;
 
         .icon {
           width: 40px;
           height: 40px;
-          background-color: themed("bgSoft");
+          background-color: themed("bgIcon");
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -159,7 +159,7 @@
             }
           }
           .menu-item:hover {
-            background-color: #6c757d;
+            background-color: themed("hvColor");
             border-radius: 10px;
           }
         }

@@ -7,16 +7,18 @@ $themes: (
     textColorSoft: #555,
     border: lightgray,
     bgIcon: #E4E6EB,
-    bgScroll: ""
+    bgScroll: "",
+    hvColor: #dadee1,
   ),
   dark: (
     textColor: whitesmoke,
     bg: #222,
     logo: white,
-    bgSoft: #333,
+    bgSoft: #28292a,
     textColorSoft: lightgray,
     border: #444,
     bgIcon: #FFFFFF1A,
+    hvColor: #37393b,
   ),
 );
 

@@ -23,92 +23,25 @@
     .container {
       padding: 20px;
 
-      .suggestItem {
+      .yourFriends {
         // -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
         // -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
         // box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
-        padding: 20px;
-        margin-bottom: 20px;
-        background-color: themed("bg");
-        border-radius: 20px;
-
-        span {
-          color: gray;
-        }
-
-        .user {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin: 20px 0px;
-
-          .userInfo {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            position: relative;
-
-            img {
-              width: 40px;
-              height: 40px;
-              border-radius: 50%;
-              object-fit: cover;
-            }
-
-            .online {
-              width: 12px;
-              height: 12px;
-              border-radius: 50%;
-              background-color: limegreen;
-              position: absolute;
-              top: 0;
-              left: 30px;
-            }
-
-            p {
-              color: themed("textColorSoft");
-            }
-
-            span {
-              font-weight: 500;
-              color: themed("textColor");
-            }
-          }
-
-          .buttons {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            
-            button {
-              border: none;
-              padding: 5px 10px;
-              color: themed("textColor");
-              cursor: pointer;
-              border: none;
-              background-color: themed("bg");
-              border-radius:12px;
-            }
-             button:hover {
-              background-color: themed("bgSoft");
-             }
-          }
-        }
-      }
-
-      .yourFriends {
-        -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
-        -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
-        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
-        padding: 20px;
         margin-bottom: 20px;
         background-color: themed("bg");
         border-radius: 20px;
         cursor: pointer;
 
-
-        span {
-          color: gray;
+        .menuFriend {
+          font-weight: 600;
+          color: themed("textColor");
+          font-size: 16px;
+        }
+        hr {
+          margin: 10px 0px;
+          border: none;
+          height: 0.5px;
+          background-color: themed("border");
         }
 
         .friend {
@@ -116,8 +49,7 @@
           align-items: center;
           justify-content: space-between;
           margin: 4px 0px;
-          padding: 6px;
-
+          padding: 8px;
 
           .friendInfo {
             display: flex;
@@ -126,8 +58,8 @@
             position: relative;
 
             img {
-              width: 40px;
-              height: 40px;
+              width: 30px;
+              height: 30px;
               border-radius: 50%;
               object-fit: cover;
             }
@@ -139,18 +71,18 @@
               background-color: limegreen;
               position: absolute;
               top: 0;
-              left: 30px;
+              left: 20px;
             }
 
-            span {
+            .friendName {
               font-weight: 500;
               color: themed("textColor");
             }
           }
         }
 
-        .friend:hover{
-          background-color: themed("bgSoft");
+        .friend:hover {
+          background-color: themed("hvColor");
           border-radius: 8px;
         }
       }
